@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美しい笑顔への第一歩 - マウスピース矯正 | 京都歯科医院</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+        }
+        
+        body {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            position: relative;
+            height: 80vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.7)), url('/api/placeholder/1600/900') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            max-width: 800px;
+        }
+        
+        h1 {
+            color: #e87db1;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #e87db1;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #d66a9c;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(232, 125, 177, 0.4);
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: #e87db1;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+        
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            flex: 1 1 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fce7f1;
+            border-radius: 50%;
+        }
+        
+        .benefit-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .benefit-title {
+            text-align: center;
+            color: #e87db1;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .process {
+            margin-top: 3rem;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            flex: 1 1 250px;
+            margin: 1rem;
+            position: relative;
+            counter-increment: step-counter;
+        }
+        
+        .step::before {
+            content: counter(step-counter);
+            position: absolute;
+            top: -15px;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #e87db1;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .step-inner {
+            border-left: 2px solid #e87db1;
+            padding: 1rem 1.5rem;
+            margin-left: 20px;
+            height: 100%;
+        }
+        
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .testimonial {
+            flex: 1 1 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            position: relative;
+            padding: 0 1rem;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: #e87db1;
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: 0;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            margin-top: 1rem;
+            font-style: italic;
+            color: #888;
+        }
+        
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #e87db1;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background-color: #fce7f1;
+            padding: 5rem 2rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .contact-info {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        .phone {
+            font-size: 1.5rem;
+            color: #e87db1;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: #e87db1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #d66a9c;
+            transform: translateY(-3px);
+        }
+        
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero {
+                height: 60vh;
+            }
+            
+            .step::before {
+                top: -10px;
+                left: 0;
+            }
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .price-table th, .price-table td {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .price-table th {
+            background-color: #fce7f1;
+            color: #e87db1;
+        }
+        
+        .price-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <!-- ヒーローセクション -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>自然な笑顔を取り戻す<br>マウスピース矯正</h1>
+            <p class="subtitle">透明で目立たない。取り外し可能で快適な矯正治療</p>
+            <a href="#contact" class="cta-button">無料相談・お問い合わせ</a>
+        </div>
+    </div>
+    
+    <!-- メリットセクション -->
+    <section id="benefits">
+        <h2 class="section-title">マウスピース矯正のメリット</h2>
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="/api/placeholder/80/80" alt="透明なマウスピースアイコン">
+                </div>
+                <h3 class="benefit-title">目立たない透明マウスピース</h3>
+                <p>透明なマウスピースは目立ちにくく、矯正中でも自信を持って笑顔でいられます。人前でも気にせず会話や食事を楽しめます。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="/api/placeholder/80/80" alt="取り外し可能アイコン">
+                </div>
+                <h3 class="benefit-title">取り外し可能で快適</h3>
+                <p>食事や歯磨きの時に取り外せるので、お口のケアも簡単。食べ物の制限もなく、普段通りの生活が送れます。</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <img src="/api/placeholder/80/80" alt="痛みが少ないアイコン">
+                </div>
+                <h3 class="benefit-title">痛みが少なく快適</h3>
+                <p>従来のワイヤー矯正と比べて痛みが少なく、金属アレルギーの心配もありません。快適に矯正治療を続けられます。</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 治療の流れセクション -->
+    <section id="process">
+        <h2 class="section-title">マウスピース矯正の流れ</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-inner">
+                    <h3>無料カウンセリング</h3>
+                    <p>お悩みやご希望をお聞きし、マウスピース矯正が適しているかを診断します。治療計画や費用についても丁寧にご説明します。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-inner">
+                    <h3>精密検査・型取り</h3>
+                    <p>最新の3Dスキャナーでお口の状態を精密に測定。痛みや違和感なく快適に行えます。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-inner">
+                    <h3>マウスピース作成</h3>
+                    <p>3Dデータを基に、あなただけのオーダーメイドマウスピースを作成します。デジタル技術で精密な仕上がりを実現。</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-inner">
+                    <h3>装着・定期検診</h3>
+                    <p>マウスピースの装着方法や注意点をご説明。1-2ヶ月ごとの定期検診で治療の進行状況を確認します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 料金セクション -->
+    <section id="price">
+        <h2 class="section-title">料金プラン</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">あなたのお口の状態や矯正の範囲に合わせた最適なプランをご提案します</p>
+        
+        <table class="price-table">
+            <tr>
+                <th>プラン</th>
+                <th>対象</th>
+                <th>料金（税込）</th>
+            </tr>
+            <tr>
+                <td>ライトプラン</td>
+                <td>軽度の歯並びの乱れ<br>前歯の部分矯正</td>
+                <td>330,000円〜</td>
+            </tr>
+            <tr>
+                <td>スタンダードプラン</td>
+                <td>中程度の歯並びの乱れ<br>全体的な矯正</td>
+                <td>550,000円〜</td>
+            </tr>
+            <tr>
+                <td>プレミアムプラン</td>
+                <td>複雑な歯並びの乱れ<br>全体的な矯正＋特別ケア</td>
+                <td>770,000円〜</td>
+            </tr>
+        </table>
+        
+        <p style="text-align: center;">※初回カウンセリング・お見積りは無料です<br>※分割払いやデンタルローンもご用意しております</p>
+    </section>
+    
+    <!-- 症例紹介 -->
+    <section id="cases">
+        <h2 class="section-title">症例紹介</h2>
+        <div class="benefits">
+            <div class="benefit-card">
+                <h3 class="benefit-title">30代女性</h3>
+                <p>治療期間：約1年2ヶ月</p>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <img src="/api/placeholder/300/200" alt="症例1 ビフォーアフター">
+                </div>
+                <p>「仕事上、人と接する機会が多いので目立たない矯正を希望していました。マウスピース矯正で自然に笑えるようになり自信が持てるようになりました。」</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">40代女性</h3>
+                <p>治療期間：約1年6ヶ月</p>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <img src="/api/placeholder/300/200" alt="症例2 ビフォーアフター">
+                </div>
+                <p>「子育てが一段落して、ずっと気になっていた歯並びを治したいと思いました。痛みが少なく、日常生活に支障なく矯正できたのがよかったです。」</p>
+            </div>
+            <div class="benefit-card">
+                <h3 class="benefit-title">20代女性</h3>
+                <p>治療期間：約10ヶ月</p>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <img src="/api/placeholder/300/200" alt="症例3 ビフォーアフター">
+                </div>
+                <p>「前歯のガタつきが気になっていました。短期間で理想の歯並びになり、写真を撮る時も堂々と笑えるようになって嬉しいです。」</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 患者様の声 -->
+    <section id="testimonials">
+        <h2 class="section-title">患者様の声</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <p>仕事で人前に立つ機会が多いので、目立たないマウスピース矯正を選びました。治療中でも誰にも気づかれず、自然な笑顔で過ごせたのが良かったです。先生やスタッフの方々も女性ばかりで、とても親切で安心して通えました。</p>
+                </div>
+                <p class="testimonial-author">K.S様（32歳・会社員）</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <p>子育てが一段落して、昔から気になっていた歯並びを治そうと決心しました。マウスピースは取り外しできるので、家事や育児の合間にケアができて便利でした。院内の雰囲気も落ち着いていて、リラックスして通えます。</p>
+                </div>
+                <p class="testimonial-author">M.T様（45歳・主婦）</p>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <p>金属アレルギーがあったので、マウスピース矯正は私にぴったりでした。痛みもほとんどなく、快適に過ごせています。結婚式前に矯正を始めましたが、写真撮影も気にならず、素敵な思い出が残せました。</p>
+                </div>
+                <p class="testimonial-author">A.K様（28歳・販売員）</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- よくある質問 -->
+    <section id="faq">
+        <h2 class="section-title">よくある質問</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-question">マウスピース矯正の装着時間はどれくらいですか？</div>
+                <div class="faq-answer">
+                    <p>1日20〜22時間の装着が理想的です。食事と歯磨きの時以外は装着していただくことで、効果的な治療が可能です。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">痛みはありますか？</div>
+                <div class="faq-answer">
+                    <p>従来のワイヤー矯正と比べて痛みは少ないですが、新しいマウスピースに交換した際に軽い違和感を感じる場合があります。数日で慣れることが多いです。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">どのくらいの期間で治療が終わりますか？</div>
+                <div class="faq-answer">
+                    <p>歯並びの状態により個人差がありますが、一般的に軽度の場合は約6ヶ月〜1年、中程度から重度の場合は1年〜2年程度です。初回診断時に詳しい治療期間をご説明します。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">保険は適用されますか？</div>
+                <div class="faq-answer">
+                    <p>審美目的の矯正治療は保険適用外となります。ただし、当院では分割払いやデンタルローンなど、患者様の負担を軽減するお支払い方法をご用意しております。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">妊娠中でも矯正治療はできますか？</div>
+                <div class="faq-answer">
+                    <p>基本的には可能ですが、つわりの時期や出産間近は体調を優先されることをおすすめします。個別の状況に応じて最適な治療計画をご提案しますので、まずはご相談ください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section id="contact" class="cta-section">
+        <h2 class="section-title">まずは無料カウンセリングで<br>あなたに最適な矯正プランをご提案します</h2>
+        <p style="margin-bottom: 2rem;">お気軽にお問い合わせください。女性スタッフが丁寧にご対応いたします。</p>
+        <a href="tel:075-123-4567" class="cta-button">今すぐ予約する</a>
+        <p class="phone">電話予約：075-123-4567</p>
+        <p>受付時間：10:00〜19:00（水曜・日曜休診）</p>
+    </section>
+    
+    <!-- フッター -->
+    <footer>
+        <div class="contact-info">
+            <h3>京都歯科医院</h3>
+            <p>〒600-8216<br>京都市下京区烏丸通七条下る東塩小路町721-1</p>
+            <p>最寄駅：JR京都駅から徒歩5分</p>
+            <p>TEL: 075-123-4567</p>
+            <p>営業時間: 10:00〜19:00（水曜・日曜休診）</p>
+        </div>
+        <div class="social-links">
+            <a href="#" class="social-link">I</a>
+            <a href="#" class="social-link">F</a>
+            <a href="#" class="social-link">T</a>
+        </div>
+        <p style="margin-top: 2rem;">&copy; 2025 京都歯科医院 All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // FAQのアコーディオン機能
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                    question.style.color = '#d66a9c';
+                } else {
+                    answer.style.display = 'none';
+                    question.style.color = '#e87db1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
